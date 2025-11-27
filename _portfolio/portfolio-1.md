@@ -8,8 +8,8 @@ collection: portfolio
 
 🧑🏻‍💻ALGORITHM：
 <p align="center">
-  <img src="/images/drift correction1.png' width="403" height="153">
-  <img src="/images/drift correction2.png' width="193" height="153">
+  <img src="/images/drift correction3.png" width="353" height="503">
+  <img src="/images/drift correction4.png" width="503" height="503">
 </p>
 🧑‍🔧SOFTWARE＆HARDWARE：LabVIEW-MATLAB、Serial Communications
 🕮README：
