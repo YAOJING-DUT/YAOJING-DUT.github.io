@@ -9,7 +9,7 @@ collection: portfolio
 🧑🏻‍💻ALGORITHM：
 <p align="center">
   <img src="/images/drift correction1.png" width="353" height="503">
-  <img src="/images/drift correction2.png" width="503" height="503">
+  <img src="/images/drift correction2.png" width="353" height="278">
 </p>
 🧑‍🔧SOFTWARE＆HARDWARE：LabVIEW-MATLAB、Serial Communications
 🕮README：
@@ -17,5 +17,5 @@ collection: portfolio
 &ensp;&ensp;For every 2000 frames acquired, an automatic drift correction will be performed. This process includes “turning on the white light, turning off the laser, capturing a bright-field image, calling MATLAB for computation, turning off the white light, turning on the laser, and controlling the PIEZO actuator to compensate for the drift.” The drift amount from each correction will be automatically saved to a text file and plotted as a curve in the RELATIVE DEPTH–TIMES panel. In general, the sample tends to drift in one direction. If the system is highly robust, the drift will fluctuate only within a small range.
 <p align="center">
   <img src="/images/drift correction3.png" width="353" height="503">
-  <img src="/images/drift correction4.png" width="503" height="503">
+  <img src="/images/drift correction4.png" width="353" height="353">
 </p>
