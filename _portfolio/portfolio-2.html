@@ -10,12 +10,15 @@ collection: portfolio
 🔧<b>TOOLS</b>：SOLIDWORKS、CAD、MATLAB、LabVIEW<br><br>
 
 🔬<b>EXCITATION PATH</b>：<br>
+&ensp;&ensp;Modify the excitation optical path to form two branches, place a DMD in one of them, and register the DMD target plane with the ROI.<br>
 <p align="center">
   <img src="/images/optical path.png" width="273" height="273">
   <img src="/images/registration.png" width="468" height="273">
 </p>
 
 👇<b>SOFTWARE</b>＆<b>HARDWARE</b>：<br>
+&ensp;&ensp;Develop a LabVIEW program to route the camera’s output trigger signals to the DMD at the hardware level. 
+Use an oscilloscope to measure the camera signals, including： A (Global Exposure, Positive), B (Readout End, Positive, width = 0.003), C (High), and D (Low).<br>
 <p align="center">
   <img src="/images/gui trigger.png" width="353" height="503">
   <img src="/images/hardware.png" width="193" height="503">
@@ -23,11 +26,15 @@ collection: portfolio
 </p>
 
 ⏲︎<b>SYNC CONTROL</b>：<br>
+&ensp;&ensp;Synchronize the camera and DMD signals, with the green curve representing the camera signal and the yellow curve representing the DMD signal. 
+The DMD flips the images upon receiving the rising edge of the camera signal.<br>
 <p align="center">
   <img src="/images/sync control.png" width="353" height="503">
   <img src="/images/figures_tri.gif" width="248" height="248">
 </p>
 🎨<b>IMAGING PROCESSING</b>：<br>
+&ensp;&ensp;First, capture an image under global illumination, then process the image, including binarization, affine transformation, and dilation-based segmentation.
+Next, load the processed images onto the DMD. During one exposure period, the DMD image remains unchanged. When the camera starts the next exposure, the DMD flips the images.<br>
 <p align="center">
   <img src="/images/imaging processing.png" width="428" height="233">
   <img src="/images/blingkingdata.gif" width="298" height="233">
