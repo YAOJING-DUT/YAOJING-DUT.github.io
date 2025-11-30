@@ -19,6 +19,7 @@ LabVIEW-MATLAB、Serial Communications<br>
 🍞<b>SOFTWARE</b>＆<b>HARDWARE</b>：<br>
 <p align="center">
   <img src="/images/drift correction3.png" width="353" height="503">
+  <img src="/images/shutter.png" width="823" height="503">
 </p>
 <p align="center">
   <img src="/images/drift correction4.png" width="353" height="353">
