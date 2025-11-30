@@ -14,9 +14,9 @@ collection: portfolio
   <img src="/images/drift correction1.png" width="353" height="503">
   <img src="/images/drift correction2.png" width="353" height="278">
 </p>
-🧑‍🔧<b>TOOLS</b>：
+🛠️<b>TOOLS</b>：
 LabVIEW-MATLAB、Serial Communications<br>
-👇<b>SOFTWARE</b>＆<b>HARDWARE</b>：<br>
+🍞<b>SOFTWARE</b>＆<b>HARDWARE</b>：<br>
 <p align="center">
   <img src="/images/drift correction3.png" width="353" height="503">
 </p>
