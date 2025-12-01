@@ -24,6 +24,9 @@ LabVIEW-MATLAB、Serial Communications<br>
 <p align="center">
   <img src="/images/dc video.gif" width="733" height="413">
 </p>
+<video controls width="733" height="413">
+  <source src="/images/dc video.mp4" type="video/mp4">
+</video>
 &ensp;&ensp;In general, the sample tends to drift in one direction. If the system is highly robust, the drift will fluctuate only within a small range.<br>
 <p align="center">
   <img src="/images/drift correction4.png" width="353" height="353">
