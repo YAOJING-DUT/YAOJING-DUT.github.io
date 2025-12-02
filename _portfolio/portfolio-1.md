@@ -9,12 +9,12 @@ collection: portfolio
 &ensp;&ensp;Before imaging, focus the system and define this focal plane as 0. Then acquire a reference stack of 21 images from –1 µm to +1 µm along the z-axis with a step size of 0.1 µm, and save it to the REF path. After that, return to the focal plane, turn on the AUTO control button, and imaging can begin.<br>
 &ensp;&ensp;For every 2000 frames acquired, an automatic drift correction will be performed. This process includes “turning on the white light, turning off the laser, capturing a bright-field image, calling MATLAB for computation, turning off the white light, turning on the laser, and controlling the PIEZO actuator to compensate for the drift.” The drift amount from each correction will be automatically saved to a text file and plotted as a curve in the RELATIVE DEPTH–TIMES panel.<br>
 🧑🏻‍💻<b>ALGORITHM</b>：
+&ensp;&ensp;The method for estimating image displacement based on frequency-domain cross-correlation was first proposed by [Chen et al. in 1994](https://ieeexplore.ieee.org/abstract/document/387491). This method assumes that the two images involved in the cross-correlation differ only by translation, rotation, and scale transformation. By computing the phase spectra of the two images and then obtaining the cross-power spectrum, an inverse Fourier transform is performed. The position of the peak in the transformed image corresponds to the relative displacement between the two images.
 <p align="center">
   <img src="/images/drift correction1.png" width="353" height="503">
   <img src="/images/drift correction2.png" width="353" height="278">
 </p>
-🛠️<b>TOOLS</b>：
-LabVIEW-MATLAB、Serial Communications<br>
+🛠️<b>TOOLS</b>：LabVIEW-MATLAB、Serial Communications<br>
 🍞<b>SOFTWARE</b>＆<b>HARDWARE</b>：<br>
 <p align="center">
   <img src="/images/drift correction3.png" width="223" height="318">
