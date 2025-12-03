@@ -4,7 +4,7 @@ excerpt: "Short Description：Construction of the Drift Correction Module in the
 collection: portfolio
 ---
 
-[CODE AVAILABLE](https://github.com/JingYao-OPTICS2023/drift-correction-OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO)<br>
+[CODE AVAILABILITY](https://github.com/JingYao-OPTICS2023/drift-correction-OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO)<br>
 🕮<b>README</b>：<br>
 &ensp;&ensp;Before imaging, focus the system and define this focal plane as 0. Then acquire a reference stack of 21 images from –1 µm to +1 µm along the z-axis with a step size of 0.1 µm, and save it to the REF path. After that, return to the focal plane, turn on the AUTO control button, and imaging can begin.<br>
 🧑🏻‍💻<b>ALGORITHM</b>：<br>
