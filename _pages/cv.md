@@ -12,7 +12,7 @@ redirect_from:
   <a href="{{ base_path }}/files/CV（Chinese Version）.pdf" class="btn btn--primary">Download CV as PDF (Chinese Version)</a>
 </div>
 <div class="cv-download-links">
-  <a href="{{ base_path }}/files/CV（English Version）.pdf" class="btn btn--primary">Download CV as PDF (English Version)</a>
+  <a href="{{ base_path }}/files/CV (English Version).pdf" class="btn btn--primary">Download CV as PDF (English Version)</a>
 </div>
 
 
