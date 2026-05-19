@@ -1,0 +1,60 @@
+/* ==========================================================================
+   DARK THEME - Enhanced Academic Style
+   ========================================================================== */
+
+/* Color codes used for the theme */
+$gray                       : #9ca3af;
+$dark-gray                  : #6b7280;
+$darker-gray                : #4b5563;
+$light-gray                 : #d1d5db;
+
+$background                 : #0f1117;
+$background-light           : #1a1d2e;
+$background-lighter         : #252840;
+$text                       : #e2e8f0;
+$link                       : #818cf8;
+$link-dark                  : #6366f1;
+$link-light                 : #a5b4fc;
+
+/* Color codes used for the site */
+$danger-color               : #f87171;
+$info-color                 : #60a5fa;
+$notice-color               : #9ca3af;
+$success-color              : #34d399;
+$warning-color              : #fbbf24;
+
+/* Other basic settings for the template */
+$border-radius              : 8px;
+$box-shadow                 : 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+$global-transition          : all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 260px;
+$sidebar-screen-min-width   : 1024px;
+
+/* Dark theme for the site */
+html[data-theme="dark"] {
+    --global-base-color                 : #{$background};
+    --global-bg-color                   : #{$background};
+    --global-footer-bg-color            : #{$background-light};
+    --global-border-color               : rgba(99, 102, 241, 0.2);
+    --global-dark-border-color          : #{$background-lighter};
+    --global-code-background-color      : #{$background-light};
+    --global-code-text-color            : #c4b5fd;
+    --global-fig-caption-color          : #{$gray};
+    --global-link-color                 : #{$link};
+    --global-link-color-hover           : #{$link-light};
+    --global-link-color-visited         : #{$link-dark};
+    --global-masthead-link-color        : #{$text};
+    --global-masthead-link-color-hover  : #{$link};
+    --global-text-color                 : #{$text};
+    --global-text-color-light           : #{$gray};
+    --global-thead-color                : #{$background-lighter};
+    --global-accent-color               : #{$link};
+    --global-accent-secondary           : #a78bfa;
+    --global-accent-light               : rgba(129, 140, 248, 0.15);
+    --global-card-shadow                : 0 4px 20px rgba(0, 0, 0, 0.4);
+    --global-sidebar-bg                 : linear-gradient(160deg, #141628 0%, #0f1117 100%);
+    --global-masthead-bg                : #0f1117;
+}
