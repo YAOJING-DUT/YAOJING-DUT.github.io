@@ -9,8 +9,8 @@ redirect_from:
 
 {% include base_path %}
 <div class="cv-download-links" style="display:flex; flex-direction:column; gap:0.6em; margin-bottom:0.8em; max-width:360px;">
-  <a href="{{ base_path }}/files/CV (Chinese Version).pdf" class="btn btn--primary" style="width:100%; text-align:center; padding:0.63em 0.73em; min-height:0; box-sizing:border-box;"><span style="border-bottom:1px solid currentColor; padding-bottom:1px;">Download CV as PDF (Chinese Version)</span></a>
-  <a href="{{ base_path }}/files/CV (English Version).pdf" class="btn btn--primary" style="width:100%; text-align:center; padding:0.63em 0.73em; min-height:0; box-sizing:border-box;"><span style="border-bottom:1px solid currentColor; padding-bottom:1px;">Download CV as PDF (English Version)</span></a>
+  <a href="{{ base_path }}/files/CV (Chinese Version).pdf" class="btn btn--primary" style="width:100%; text-align:center; padding:0.63em 0.63em; min-height:0; box-sizing:border-box;"><span style="border-bottom:1px solid currentColor; padding-bottom:1px;">Download CV as PDF (Chinese Version)</span></a>
+  <a href="{{ base_path }}/files/CV (English Version).pdf" class="btn btn--primary" style="width:100%; text-align:center; padding:0.63em 0.63em; min-height:0; box-sizing:border-box;"><span style="border-bottom:1px solid currentColor; padding-bottom:1px;">Download CV as PDF (English Version)</span></a>
 </div>
 
 
