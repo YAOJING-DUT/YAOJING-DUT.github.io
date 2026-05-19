@@ -1,0 +1,106 @@
+/* ==========================================================================
+   MASTHEAD - Enhanced with glassmorphism & smooth animations
+   ========================================================================== */
+
+.masthead {
+  position: fixed;
+  background: var(--global-masthead-bg, rgba(250, 251, 255, 0.88));
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  height: fit-content;
+  top: 0;
+  width: 100%;
+
+  -webkit-animation: intro 0.3s both;
+          animation: intro 0.3s both;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+  z-index: 20;
+
+  /* Gradient bottom border */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      var(--global-accent-color, #4f46e5) 30%, 
+      var(--global-accent-secondary, #7c3aed) 70%, 
+      transparent 100%);
+    width: 100%;
+    opacity: 0.7;
+  }
+
+  &__inner-wrap {
+    @include container;
+    @include clearfix;
+    padding: 0.5em 1em;
+    font-family: $sans-serif-narrow;
+
+    @include breakpoint($x-large) {
+      max-width: $x-large;
+    }
+
+    nav {
+      z-index: 10;
+    }
+
+    a {
+      text-decoration: none;
+      position: relative;
+      transition: color 0.2s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--global-accent-color, #4f46e5);
+        border-radius: 1px;
+        transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.masthead__menu {
+
+  ul {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    list-style-type: none;
+  }
+}
+
+.masthead__menu-item {
+  background-color: transparent;
+  display: block;
+  list-style-type: none;
+  white-space: nowrap;
+
+  &--lg {
+    padding-right: 2em;
+    font-weight: 700;
+
+    a {
+      background: linear-gradient(135deg, var(--global-accent-color, #4f46e5), var(--global-accent-secondary, #7c3aed));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.05em;
+      letter-spacing: 0.02em;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
