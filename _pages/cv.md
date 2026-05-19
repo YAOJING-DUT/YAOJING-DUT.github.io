@@ -9,8 +9,8 @@ redirect_from:
 
 {% include base_path %}
 <div class="cv-download-links" style="display:flex; flex-direction:column; gap:0.6em; margin-bottom:0.8em; max-width:360px;">
-  <a href="{{ base_path }}/files/CV (Chinese Version).pdf" class="btn btn--primary" style="width:100%; text-align:center; padding:0.53em 1em; min-height:0; box-sizing:border-box;">Download CV as PDF (Chinese Version)</a>
-  <a href="{{ base_path }}/files/CV (English Version).pdf" class="btn btn--primary" style="width:100%; text-align:center; padding:0.53em 1em; min-height:0; box-sizing:border-box;">Download CV as PDF (English Version)</a>
+  <a href="{{ base_path }}/files/CV (Chinese Version).pdf" class="btn btn--primary" style="width:100%; text-align:center; padding:0.53em 1em; min-height:0; box-sizing:border-box;text-decoration:underline;">Download CV as PDF (Chinese Version)</a>
+  <a href="{{ base_path }}/files/CV (English Version).pdf" class="btn btn--primary" style="width:100%; text-align:center; padding:0.53em 1em; min-height:0; box-sizing:border-box;text-decoration:underline;">Download CV as PDF (English Version)</a>
 </div>
 
 
