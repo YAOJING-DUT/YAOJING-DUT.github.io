@@ -1,6 +1,5 @@
 ---
 title: "PROJECT 1：Construction of the Drift Correction Module in the STORM System"
-excerpt: "Short Description：Construction of the Drift Correction Module in the STORM System<br/>"
 collection: portfolio
 ---
 
