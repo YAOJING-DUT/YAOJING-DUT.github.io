@@ -1,0 +1,88 @@
+---
+layout: archive
+permalink: /publications/
+author_profile: true
+---
+
+<style>
+.pub-section-title {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-weight: 600;
+  font-size: 2.2em;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, var(--global-accent-color, #4f46e5), var(--global-accent-secondary, #7c3aed));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.6em;
+  margin-top: 1.2em;
+  position: relative;
+  display: inline-block;
+}
+.pub-section-title::after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin-top: 0.3em;
+  background: linear-gradient(90deg, var(--global-accent-color, #4f46e5), var(--global-accent-secondary, #7c3aed), transparent);
+  border-radius: 1px;
+  width: 100%;
+}
+.pub-entry {
+  padding: 1em 1.2em;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-border-color, #e5e7eb);
+  border-radius: 10px;
+  margin-bottom: 0.8em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  line-height: 1.7;
+}
+.pub-entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.1);
+  border-color: var(--global-accent-color, #4f46e5);
+}
+</style>
+
+<h2 class="pub-section-title">PAPER</h2>
+
+<div class="pub-entry">
+(1) <b style="font-style: italic;">Jing Yao</b>, Jiarui Zhang, Ming Xu, Can Wang, Donghan Ma*. Digital-micromirror-device-based illumination strategies for background suppression in single-molecule localization microscopy [J]. <b>Biomedical Optics Express</b>.{% include base_path %}
+<div style="margin-top:0.6em">
+  <a href="{{ base_path }}/files/paper.pdf" class="btn btn--small">📄 Download Paper</a>
+</div>
+</div>
+
+<h2 class="pub-section-title">PATENT</h2>
+
+<div class="pub-entry">
+(1) Donghan Ma, <b style="font-style: italic;">Jing Yao</b>, Jiarui Zhang, Ming Xu, Can Wang; A Background Suppression Method for Single-Molecule Localization Microscopy Based on a Digital Micromirror Device, China.
+</div>
+
+<!-- 
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+{% endif %}
+
+{% include base_path %}
+
+{% if site.publication_category %}
+  {% for category in site.publication_category  %}
+    {% assign title_shown = false %}
+    {% for post in site.publications reversed %}
+      {% if post.category != category[0] %}
+        {% continue %}
+      {% endif %}
+      {% unless title_shown %}
+        <h2>{{ category[1].title }}</h2><hr />
+        {% assign title_shown = true %}
+      {% endunless %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+{% else %}
+  {% for post in site.publications reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
+-->
