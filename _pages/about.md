@@ -15,7 +15,7 @@ redirect_from:
 <div class="news-section__content">
 <div class="news-item">
   <span class="news-item__date">2026.05</span>
-  <span class="news-item__text">Our paper was accepted by <strong>Biomedical Optics Express</strong> (BOE)! 🎉</span>
+  <span class="news-item__text">Our paper was accepted by <strong>Biomedical Optics Express</strong> ! 🎉</span>
 </div>
 <!-- Add news items here, e.g.:
 <div class="news-item">
