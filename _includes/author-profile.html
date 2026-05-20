@@ -1,0 +1,174 @@
+{% include base_path %}
+
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% endif %}
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  <div class="author__avatar" style="position:relative;">
+    {% if author.avatar contains "://" %}
+    	<img src="{{ author.avatar }}" alt="{{ author.name }}" style="position:relative; z-index:1;" fetchpriority="high" />
+    {% else %}
+    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}" style="position:relative; z-index:1;" fetchpriority="high" />
+    {% endif %}
+    <span style="position:absolute; top:2px; left:50%; transform:translateX(-50%) rotate(-15deg); font-size:0.75em; z-index:2;">🔧</span>
+    <span style="position:absolute; top:50%; left:0px; transform:translateY(-50%) rotate(-10deg); font-size:0.75em; z-index:2;">💻</span>
+    <span style="position:absolute; top:50%; right:0px; transform:translateY(-50%) rotate(10deg); font-size:0.75em; z-index:2;">🖥️</span>
+    <span style="position:absolute; bottom:2px; left:50%; transform:translateX(-50%) rotate(15deg); font-size:0.75em; z-index:2;">⚙️</span>
+  </div>
+
+  <div class="author__content">
+    <h3 class="author__name">{{ author.name }}</h3>
+    {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
+    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      <!-- Font Awesome icons / Biographic information  -->
+      {% if author.location %}
+        <li class="author__desktop"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📍</span>{{ author.location }}</li>
+      {% endif %}
+      {% if author.employer %}
+        <li class="author__desktop"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🏛️</span>{{ author.employer }}</li>
+      {% endif %}
+      {% if author.uri %}
+        <li><a href="{{ author.uri }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🔗</span>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
+      {% endif %}
+      {% if author.email %}
+        <li><a href="mailto:{{ author.email }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">✉️</span>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
+      {% endif %}
+
+      <!-- Academic websites -->
+      {% if author.academia %}
+        <li><a href="{{ author.academia }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🎓</span>Academia</a></li>
+      {% endif %}
+      {% if author.arxiv %}
+        <li><a href="{{ author.arxiv }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📄</span>arXiv</a></li>
+      {% endif %}      
+      {% if author.googlescholar %}
+        <li><a href="{{ author.googlescholar }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📚</span>Google Scholar</a></li>
+      {% endif %}
+      {% if author.semantic %}
+        <li><a href="{{ author.semantic }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📖</span>Semantic Scholar</a></li>
+      {% endif %}
+      {% if author.impactstory %}
+        <li><a href="{{ author.impactstory }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📊</span>Impactstory</a></li>
+      {% endif %}
+      {% if author.orcid %}
+        <li><a href="{{ author.orcid }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🆔</span>ORCID</a></li>
+      {% endif %}
+      {% if author.pubmed %}
+        <li><a href="{{ author.pubmed }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🧬</span>PubMed</a></li>
+      {% endif %}                        
+      {% if author.researchgate %}
+        <li><a href="{{ author.researchgate }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🌐</span>ResearchGate</a></li>
+      {% endif %}
+      {% if author.scopus %}
+        <li><a href="{{ author.scopus }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🔍</span>Scopus</a></li>
+      {% endif %}
+      {% if author.inspire-hep %}
+        <li><a href="{{ author.inspire-hep }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">⚛️</span>INSPIRE-HEP</a></li>
+      {% endif %}
+
+      <!-- Repositories and software development -->
+      {% if author.bitbucket %}
+        <li><a href="https://bitbucket.org/{{ author.bitbucket }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🪣</span>Bitbucket</a></li>
+      {% endif %}
+      {% if author.codepen %}
+        <li><a href="https://codepen.io/{{ author.codepen }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🖊️</span>CodePen</a></li>
+      {% endif %}      
+      {% if author.dribbble %}
+        <li><a href="https://dribbble.com/{{ author.dribbble }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🏀</span>Dribbble</a></li>
+      {% endif %}      
+      {% if author.github %}
+        <li><a href="https://github.com/{{ author.github }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🐙</span>GitHub</a></li>
+      {% endif %}
+      {% if author.kaggle %}
+        <li><a href="https://kaggle.com/{{ author.kaggle }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📈</span>Kaggle</a></li>
+      {% endif %}      
+      {% if author.stackoverflow %}
+        <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📋</span>Stackoverflow</a></li>
+      {% endif %}      
+
+      <!-- Social media -->
+      {% if author.artstation %}
+        <li><a href="https://www.artstation.com/{{ author.artstation }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🎨</span>Artstation</a></li>
+      {% endif %}        
+      {% if author.bluesky %}
+        <li><a href="https://bsky.app/profile/{{ author.bluesky }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🦋</span>Bluesky</a></li>
+      {% endif %}
+      {% if author.facebook %}
+        <li><a href="https://www.facebook.com/{{ author.facebook }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📘</span>Facebook</a></li>
+      {% endif %}
+      {% if author.flickr %}
+        <li><a href="https://www.flickr.com/{{ author.flickr }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📷</span>Flickr</a></li>
+      {% endif %}      
+      {% if author.foursquare %}
+        <li><a href="https://foursquare.com/{{ author.foursquare }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📍</span>Foursquare</a></li>
+      {% endif %}
+      {% if author.goodreads %}
+        <li><a href="https://www.goodreads.com/{{ author.goodreads }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📚</span>Goodreads</a></li>
+      {% endif %}            
+      {% if author.google_plus %}
+        <li><a href="https://plus.google.com/+{{ author.google_plus }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">➕</span>Google+</a></li>
+      {% endif %}            
+      {% if author.keybase %}
+        <li><a href="https://keybase.io/{{ author.keybase }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🔑</span>Keybase</a></li>
+      {% endif %}
+      {% if author.instagram %}
+        <li><a href="https://instagram.com/{{ author.instagram }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📸</span>Instagram</a></li>
+      {% endif %}      
+      {% if author.lastfm %}
+        <li><a href="https://last.fm/user/{{ author.lastfm }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🎵</span>Last.fm</a></li>
+      {% endif %}      
+      {% if author.linkedin %}
+        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">💼</span>LinkedIn</a></li>
+      {% endif %}      
+      {% if author.mastodon %}
+        <li><a href="{{ author.mastodon }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🐘</span>Mastodon</a></li>
+      {% endif %}
+      {% if author.medium %}
+        <li><a href="{{ author.medium }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">✍️</span>Medium</a></li>
+      {% endif %}      
+      {% if author.pinterest %}
+        <li><a href="https://www.pinterest.com/{{ author.pinterest }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📌</span>Pinterest</a></li>
+      {% endif %}            
+      {% if author.soundcloud %}
+        <li><a href="https://soundcloud.com/{{ author.soundcloud }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">☁️</span>Soundcloud</a></li>
+      {% endif %}      
+      {% if author.steam %}
+        <li><a href="https://steamcommunity.com/id/{{ author.steam }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🎮</span>Steam</a></li>
+      {% endif %}
+      {% if author.telegram %}
+        <li><a href="{{ author.telegram }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">✈️</span>Telegram</a></li>
+      {% endif %}      
+      {% if author.tumblr %}
+        <li><a href="https://{{ author.tumblr }}.tumblr.com"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📓</span>Tumblr</a></li>
+      {% endif %}      
+      {% if author.twitter %}
+        <li><a href="https://twitter.com/{{ author.twitter }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🐦</span>X (formerly Twitter)</a></li>
+      {% endif %}
+      {% if author.vine %}
+        <li><a href="https://vine.co/u/{{ author.vine }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🌿</span>Vine</a></li>
+      {% endif %}        
+      {% if author.weibo %}
+        <li><a href="https://www.weibo.com/{{ author.weibo }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📱</span>Weibo</a></li>
+      {% endif %}
+      {% if author.wikipedia %}
+        <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">📖</span>Wikipedia</a></li>
+      {% endif %}                
+      {% if author.xing %}
+        <li><a href="https://www.xing.com/profile/{{ author.xing }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">🔗</span>XING</a></li>
+      {% endif %}
+      {% if author.youtube %}
+        <li><a href="https://www.youtube.com/@{{ author.youtube }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">▶️</span>YouTube</a></li>
+      {% endif %}
+      {% if author.zhihu %}
+      <li><a href="https://www.zhihu.com/people/{{ author.zhihu }}"><span style="display:inline-block; width:1.4em; text-align:center; margin-right:0.3em;">❓</span>Zhihu</a></li>
+      {% endif %}      
+    </ul>
+  </div>
+</div>
