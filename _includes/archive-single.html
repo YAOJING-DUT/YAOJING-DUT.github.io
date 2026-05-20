@@ -1,0 +1,136 @@
+{% include base_path %}
+
+{% if post.header.teaser %}
+  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% else %}
+  {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<style>
+.archive__item-card {
+  border-left: 3px solid #818cf8;
+  padding: 1em 1.2em 1.2em;
+  margin-bottom: 1.6em;
+  background: var(--global-bg-color, transparent);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, border-left-width 0.2s;
+  cursor: pointer;
+}
+.archive__item-card:hover {
+  box-shadow: 0 4px 16px rgba(129,140,248,0.18);
+  border-left-width: 5px;
+}
+.archive__item-card .archive__item-title a {
+  color: #818cf8 !important;
+  font-weight: 700;
+  font-size: 1.05em;
+  text-decoration: none !important;
+  border: none !important;
+  padding: 0;
+}
+.archive__item-card .archive__item-title a:hover {
+  color: #a5b4fc;
+}
+.archive__item-card .archive__item-excerpt {
+  color: var(--global-text-color, #e0e0e0);
+  font-size: 0.9em;
+  line-height: 1.7;
+  margin-top: 0.5em;
+}
+.archive__item-card .page__date,
+.archive__item-card .page__meta {
+  font-size: 0.8em;
+  color: var(--global-text-color-light, #888);
+  margin: 0.3em 0 0;
+}
+.archive__item-card p:not(.archive__item-excerpt):not(.page__date):not(.page__meta) {
+  font-size: 0.85em;
+  color: var(--global-text-color-light, #aaa);
+  margin-top: 0.4em;
+}
+.archive__item-card a[href]:not(.archive__item-title a) {
+  color: #818cf8;
+  font-size: 0.88em;
+}
+.archive__item-card a[href]:not(.archive__item-title a):hover { color: #a5b4fc; }
+</style>
+
+<div class="{{ include.type | default: "list" }}__item">
+  <a href="{{ base_path }}{{ post.url }}" class="archive__item-card" style="display:block; text-decoration:none;">
+    <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+      {% if include.type == "grid" and teaser %}
+        <div class="archive__item-teaser">
+          <img src=
+            {% if teaser contains "://" %}
+              "{{ teaser }}"
+            {% else %}
+              "{{ teaser | prepend: "/images/" | prepend: base_path }}"
+            {% endif %}
+            alt="">
+        </div>
+      {% endif %}
+
+      <h2 class="archive__item-title" itemprop="headline">
+        {% if post.link %}
+          {{ title }} <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </h2>
+
+      {% if post.read_time %}
+        <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
+      {% endif %}
+
+      {% if post.collection == 'teaching' %}
+        <p>{{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+      {% elsif post.collection == 'publications' %}
+        <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}</p>
+      {% elsif post.date %}
+        <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i></strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+      {% endif %}
+
+      {% if post.excerpt and site.read_more != 'enabled' %}
+        <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+      {% elsif post.excerpt and site.read_more == 'enabled' %}
+        <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
+      {% endif %}
+
+      {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
+        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      {% elsif post.citation and post.paperurl and post.slidesurl %}
+        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
+      {% elsif post.citation and post.paperurl and post.bibtexurl %}
+        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      {% elsif post.citation and post.paperurl %}
+        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
+      {% elsif post.citation and post.slidesurl and post.bibtexurl %}
+        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      {% elsif post.citation and post.slidesurl %}
+        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
+      {% elsif post.citation and post.bibtexurl %}
+        <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      {% elsif post.citation %}
+        <p>Recommended citation: {{ post.citation }}</p>
+      {% elsif post.paperurl and post.bibtexurl %}
+        <p><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      {% elsif post.paperurl %}
+        <p><a href="{{ post.paperurl }}">Download Paper</a></p>
+      {% elsif post.slidesurl and post.bibtexurl %}
+        <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      {% elsif post.slidesurl %}
+        <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
+      {% elsif post.bibtexurl %}
+        <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+      {% endif %}
+
+    </article>
+  </a>
+</div>
