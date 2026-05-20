@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 <div class="about-intro">
-  <p class="about-intro__text">Hi there! I am <strong>Jing Yao</strong> 👋. I am <em>a control engineer</em> 👩‍💻 with broad interests in science and technology. My goal is to become a full-stack engineer with a strong foundation in mathematics and physics, capable of combining theory with practical engineering across multiple disciplines 😊.</p>
+  <p class="about-intro__text">Hi there! I am <em><strong>Jing Yao</strong></em> 👋. I am <em><strong>a control engineer</strong></em> 👩‍💻 with broad interests in science and technology. My goal is to become a full-stack engineer with a strong foundation in mathematics and physics, capable of combining theory with practical engineering across multiple disciplines 😊.</p>
 </div>
 
 <div class="news-section">
