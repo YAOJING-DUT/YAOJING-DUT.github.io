@@ -17,6 +17,10 @@ redirect_from:
   <span class="news-item__date">2026.05</span>
   <span class="news-item__text">Our paper was accepted by <strong>Biomedical Optics Express</strong> ! 🎉</span>
 </div>
+<div class="news-item">
+<span class="news-item__date">2026.06</span>
+<span class="news-item__text">I obtained my <strong>Master</strong>'s degree from <strong>Dalian University of Technology</strong> ! 🎓</span>
+</div>
 <!-- Add news items here, e.g.:
 <div class="news-item">
   <span class="news-item__date">2024.01</span>
