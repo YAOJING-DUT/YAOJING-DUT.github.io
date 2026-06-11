@@ -14,12 +14,12 @@ redirect_from:
 <h2 class="news-section__title">NEWS</h2>
 <div class="news-section__content">
 <div class="news-item">
-  <span class="news-item__date">2026.05</span>
-  <span class="news-item__text">Our paper was accepted by <strong>Biomedical Optics Express</strong> ! 🎉</span>
-</div>
-<div class="news-item">
 <span class="news-item__date">2026.06</span>
 <span class="news-item__text">I obtained my <strong>Master</strong>'s degree from <strong>Dalian University of Technology</strong> ! 🎓</span>
+</div>
+<div class="news-item">
+  <span class="news-item__date">2026.05</span>
+  <span class="news-item__text">Our paper was accepted by <strong>Biomedical Optics Express</strong> ! 🎉</span>
 </div>
 <!-- Add news items here, e.g.:
 <div class="news-item">
