@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 <div class="about-intro">
-  <p class="about-intro__text">Hi there! I am <em><strong>Jing Yao</strong></em> 👋. I am <em><strong>a system engineer</strong></em> 👩‍💻 working at Shanghai Microelectronics Equipment Co., Ltd.（SMEE）, and I have a strong interest in science and technology. My goal is to become a full-stack engineer with a strong foundation in mathematics and physics, capable of combining theory with practical engineering across multiple disciplines 😊.</p>
+  <p class="about-intro__text">Hi there! I am <em><strong>Jing Yao</strong></em> 👋. I am <em><strong>a system engineer</strong></em> 👩‍🔧 working at Shanghai Microelectronics Equipment Co., Ltd.（SMEE）, and I have a strong interest in science and technology. My goal is to become a full-stack engineer with a strong foundation in mathematics and physics, capable of combining theory with practical engineering across multiple disciplines.</p>
 </div>
 
 <div class="news-section">
